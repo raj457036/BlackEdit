@@ -1,4 +1,3 @@
-h1,h2,h3,h4,h5,h6,p {margin: 0px;}
 
 #ed-float {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
@@ -32,32 +31,41 @@ blockquote {border-left: 4px solid darkgray; padding-left:5px;font-family: Arial
 
 #editor {
     display: inline-block;
-    min-width:800px;
+    min-width:600px;
+    resize: both;
+    font-family: 'Nunito', sans-serif;
     /* margin-top: 300px; */
 }
 
 #ed-tools {
-    max-width: 800px;
+    max-width: 100%;
+    min-width: 600px;
+    position: absolute;
     background: white;
     border: 1px solid gray;
     border-bottom: 0px;
-    padding: 2px 0px;
+    padding: 2px 5px;
     position: relative;
     box-sizing: border-box;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+    resize: both;
 }
 
 #ed-space {
-    max-width:800px;
-    height: 400px;
+    max-width:100%;
+    min-width: 600px;
+    min-height: 300px;
+    overflow-y: auto;
+    overflow-wrap: break-word;
     background: white;
     border: 1px solid gray; 
     position: relative;
-    padding: 0px 5px;
+    padding: 10px;
     box-sizing: border-box;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    resize: both;
 }
 .btn-box {
     display: flex;
@@ -83,6 +91,9 @@ blockquote {border-left: 4px solid darkgray; padding-left:5px;font-family: Arial
 .ed-btn-white {
     background: white;
     position: relative;
+}
+.ed-btn-div {
+    margin: 0;
 }
 .ed-btn-white:hover {
     background: rgb(233, 233, 233);
@@ -114,4 +125,24 @@ blockquote {border-left: 4px solid darkgray; padding-left:5px;font-family: Arial
 
 #ed-space:focus {
     border: 1px solid dodgerblue;
+}
+
+#highlightColor {
+    mix-blend-mode: difference;
+    color:white;
+}
+
+.ed-youtube {
+    resize: both;
+    overflow: hidden; 
+    box-sizing: border-box;
+    padding: 15px 0px 0px 0px;
+    margin-top:10px; 
+    background: rgb(221, 221, 221); 
+    display: block;
+    position: relative;
+}
+.ed-youtube:hover {
+    cursor: pointer; 
+    
 }
