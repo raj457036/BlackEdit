@@ -70,11 +70,14 @@ The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor
 	`<script  src="./blackedit.js"></script>`
  4. Initiate the editor by below code by passing the **id** to Editor constructor
     `<script>`
-    `var  ed = new  Editor('editor');`
+    `var ed = new  Editor('editor');`
     `ed.init();`
     `</script>`
  5. congratulations! You are all set
 
+> The Output function is
+> `ed.output()`
+> this will return the html content markup text of the the editor content 
 
 You can use this editor anywhere you want without any restriction. just if you want then give me a small credit.
 thank you any suggestion is welcome.
