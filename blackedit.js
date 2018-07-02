@@ -12,24 +12,24 @@ var HtmlContents = {
                         <option value="small">small text</option>
                     </select>
 
-                    <button class="ed-btn ed-btn-white" data-cmd="bold" aria-label="tooltip" aria-content='Bold (Ctrl+B)'><i class="fa fa-bold"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="italic" aria-label="tooltip" aria-content='Italic (Ctrl+I)'><i class="fa fa-italic"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="underline" aria-label="tooltip" aria-content='Underline (Ctrl+Alt+U)'><i class="fa fa-underline"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertHorizontalRule" aria-label="tooltip" aria-content='Horizontal Line (Ctrl+Alt+H)'><i class="far fa-window-minimize"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="createLink" aria-label="tooltip" aria-content='Link (Ctrl+K)'><i class="fa fa-link"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertUnorderedList" aria-label="tooltip" aria-content='Bulleted List (Ctrl+Shift+U)'><i class="fa fa-list-ul"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertOrderedList" aria-label="tooltip" aria-content='Numbered List (Ctrl+Shift+O)'><i class="fa fa-list-ol"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertImage" aria-label="tooltip" aria-content='Insert Image (Ctrl+Shift+L)'><i class="far fa-image"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="formatBlock" aria-label="tooltip" aria-content='Block quote (Ctrl+Q)'><i class="fa fa-quote-left"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="undo"  aria-label="tooltip" aria-content='Undo (Ctrl+Z)'><i class="fa fa-undo"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="redo"  aria-label="tooltip" aria-content='Redo (Ctrl+Y)'><i class="fa fa-redo"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="youtube"  aria-label="tooltip" aria-content='Youtube (Ctrl+Shift+1)'><i class="fab fa-youtube"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="bold" aria-label="tooltip" aria-content='Bold'><i class="fa fa-bold"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="italic" aria-label="tooltip" aria-content='Italic'><i class="fa fa-italic"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="underline" aria-label="tooltip" aria-content='Underline)'><i class="fa fa-underline"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertHorizontalRule" aria-label="tooltip" aria-content='Horizontal Line)'><i class="far fa-window-minimize"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="createLink" aria-label="tooltip" aria-content='Link'><i class="fa fa-link"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertUnorderedList" aria-label="tooltip" aria-content='Bulleted List)'><i class="fa fa-list-ul"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertOrderedList" aria-label="tooltip" aria-content='Numbered List)'><i class="fa fa-list-ol"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertImage" aria-label="tooltip" aria-content='Insert Image)'><i class="far fa-image"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="formatBlock" aria-label="tooltip" aria-content='Block quote'><i class="fa fa-quote-left"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="undo"  aria-label="tooltip" aria-content='Undo'><i class="fa fa-undo"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="redo"  aria-label="tooltip" aria-content='Redo'><i class="fa fa-redo"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="youtube"  aria-label="tooltip" aria-content='Youtube)'><i class="fab fa-youtube"></i></button>
                     </div>
                 </div>`,
     'ed-editor-space': `<div id="ed-space" contenteditable="true" autofocus='true'></div>`,
     'ed-floater' : `<div id="ed-float"></div>`,
     'ed-fl-links': `<div class="btn-box">
-                        <input type="text" class="ed-input" id="ed-link" autofocus>
+                        <input type="text" class="ed-input" id="ed-link">
                         <button class="ed-btn ed-btn-white" id='ed-link-btn'><i class="fa fa-check"></i></button>
                         <button class="ed-btn ed-btn-white" id='ed-unlink-btn'><i class="fa fa-times"></i></button>
                     </div>`,
@@ -120,10 +120,17 @@ class Editor {
         }
 
         let s = sel.getRangeAt(0).getBoundingClientRect();
+        console.log(s);
         this.saveSelection();
         this.bbl.style.top = s.top+s.height+5+ 'px';
         this.bbl.style.left = (s.left-5)+'px';
-        this.bbl.style.display = 'block';
+        this.bbl.style.display = 'inline-block';
+    }
+
+    // output
+
+    output() {
+        return $('#ed-space').html();
     }
 
     init(self = this) {
@@ -233,6 +240,14 @@ class Editor {
             document.getElementById('ed-space').addEventListener('mousedown', function() {
                 self.bbl = document.getElementById('ed-float');
                 self.bbl.style.display = 'none';
+                document.getElementById('ed-output').contentEditable = false;
+            })
+
+            $('#ed-output').on('mousedown',function(){
+                $(this).attr('contentEditable', 'true');
+            });
+            $('#ed-output').on('keypress keyup paste keydown',function(){
+                $('#ed-space').html($(this).text());
             })
 
         });
