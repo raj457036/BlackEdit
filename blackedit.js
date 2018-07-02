@@ -65,8 +65,9 @@ var HtmlContents = {
 
 
 class Editor {
-    constructor (id, icon_pack='fa') {
+    constructor (id, out_id='ed-output',icon_pack='fa') {
         this.id = id;
+        this.out_id=out_id;
         this.icon_pack = icon_pack;
         this.range = {};
         this.bbl = undefined;
@@ -137,13 +138,13 @@ class Editor {
         document.styleWithCSS = true;
 
         $(document).ready(function(){
-            $('#editor').append(self.content['ed-tools']);
-            $('#editor').append(self.content['ed-editor-space']);
-            $('#editor').append(self.content['ed-floater']);
+            $('#'+self.id).append(self.content['ed-tools']);
+            $('#'+self.id).append(self.content['ed-editor-space']);
+            $('#'+self.id).append(self.content['ed-floater']);
             $('#ed-space').focus();
         
 
-            $('#editor').on('click','button',function(){
+            $('#'+self.id).on('click','button',function(){
                 if($(this).attr('data-cmd') == 'formatBlock') {
                     self.run($(this).attr('data-cmd'), '<blockquote>');
                 }
@@ -203,16 +204,16 @@ class Editor {
                 }
             });
 
-            $('#editor').on('click','select#ed-fonts',function(){
+            $('#'+self.id).on('click','select#ed-fonts',function(){
                 self.run('fontName', $(this).val());
             });
 
-            $('#editor').on('click change', '#HighlightColorInput',function(){
+            $('#'+self.id).on('click change', '#HighlightColorInput',function(){
                 $('label[for="HighlightColorInput"]').css('background',$(this).val()).attr('aria-content', `Highlight_${$(this).val()}`);
                 self.run('backColor', $(this).val());
             });
 
-            $('#editor').on('click change', '#textColorInput',function(){
+            $('#'+self.id).on('click change', '#textColorInput',function(){
                 $('#textColor').css('color',$(this).val());
                 self.run('foreColor', $(this).val());
             });
@@ -240,14 +241,17 @@ class Editor {
             document.getElementById('ed-space').addEventListener('mousedown', function() {
                 self.bbl = document.getElementById('ed-float');
                 self.bbl.style.display = 'none';
-                document.getElementById('ed-output').contentEditable = false;
+                document.getElementById(self.out_id).contentEditable = false;
             })
 
-            $('#ed-output').on('mousedown',function(){
+            $('#'+self.out_id).on('mousedown',function(){
                 $(this).attr('contentEditable', 'true');
             });
-            $('#ed-output').on('keypress keyup paste keydown',function(){
+            $('#'+self.out_id).on('keypress keyup paste keydown',function(){
                 $('#ed-space').html($(this).text());
+            })
+            $('#'+self.id).on('mousedown mouseup keypress', function () {
+                $('#'+self.out_id).text(ed.output());
             })
 
         });
