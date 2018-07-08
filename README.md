@@ -1,4 +1,4 @@
-# Welcome to BlackEdit!
+# Welcome to BlackEdit! v0.2 alpha
 ## BlackEdit Editor: A Free and Powerful-WYSWYG-Editor
 
 The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor with all the modern features builtIn.

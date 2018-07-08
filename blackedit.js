@@ -1,3 +1,5 @@
+// BlackEdit V0.2 alpha
+
 var HtmlContents = {
     'ed-tools' : `<div id="ed-tools">
                 <div class="btn-box" id="level-1">
@@ -12,38 +14,41 @@ var HtmlContents = {
                         <option value="small">small text</option>
                     </select>
 
-                    <button class="ed-btn ed-btn-white" data-cmd="bold" aria-label="tooltip" aria-content='Bold'><i class="fa fa-bold"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="italic" aria-label="tooltip" aria-content='Italic'><i class="fa fa-italic"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="underline" aria-label="tooltip" aria-content='Underline)'><i class="fa fa-underline"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertHorizontalRule" aria-label="tooltip" aria-content='Horizontal Line)'><i class="far fa-window-minimize"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="createLink" aria-label="tooltip" aria-content='Link'><i class="fa fa-link"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertUnorderedList" aria-label="tooltip" aria-content='Bulleted List)'><i class="fa fa-list-ul"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertOrderedList" aria-label="tooltip" aria-content='Numbered List)'><i class="fa fa-list-ol"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="insertImage" aria-label="tooltip" aria-content='Insert Image)'><i class="far fa-image"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="formatBlock" aria-label="tooltip" aria-content='Block quote'><i class="fa fa-quote-left"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="undo"  aria-label="tooltip" aria-content='Undo'><i class="fa fa-undo"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="redo"  aria-label="tooltip" aria-content='Redo'><i class="fa fa-redo"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="youtube"  aria-label="tooltip" aria-content='Youtube)'><i class="fab fa-youtube"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="bold" aria-label="tooltip" aria-content='Bold' type="button"><i class="fa fa-bold"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="italic" aria-label="tooltip" aria-content='Italic' type="button"><i class="fa fa-italic"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="underline" aria-label="tooltip" aria-content='Underline' type="button"><i class="fa fa-underline"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertHorizontalRule" aria-label="tooltip" aria-content='Horizontal Line' type="button"><i class="far fa-window-minimize"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="createLink" aria-label="tooltip" aria-content='Link' type="button"><i class="fa fa-link"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertUnorderedList" aria-label="tooltip" aria-content='Bulleted List' type="button"><i class="fa fa-list-ul"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertOrderedList" aria-label="tooltip" aria-content='Numbered List' type="button"><i class="fa fa-list-ol"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="insertImage" aria-label="tooltip" aria-content='Insert Image' type="button"><i class="far fa-image"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="formatBlock" aria-label="tooltip" aria-content='Block quote' type="button"><i class="fa fa-quote-left"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="undo"  aria-label="tooltip" aria-content='Undo' type="button"><i class="fa fa-undo"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="redo"  aria-label="tooltip" aria-content='Redo' type="button"><i class="fa fa-redo"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="youtube"  aria-label="tooltip" aria-content='Youtube' type="button"><i class="fab fa-youtube"></i></button>
                     </div>
                 </div>`,
     'ed-editor-space': `<div id="ed-space" contenteditable="true" autofocus='true'></div>`,
     'ed-floater' : `<div id="ed-float"></div>`,
     'ed-fl-links': `<div class="btn-box">
                         <input type="text" class="ed-input" id="ed-link">
-                        <button class="ed-btn ed-btn-white" id='ed-link-btn'><i class="fa fa-check"></i></button>
-                        <button class="ed-btn ed-btn-white" id='ed-unlink-btn'><i class="fa fa-times"></i></button>
+                        <button class="ed-btn ed-btn-white" id='ed-link-btn' type="button"><i class="fa fa-check"></i></button>
+                        <button class="ed-btn ed-btn-white" id='ed-unlink-btn' type="button"><i class="fa fa-times"></i></button>
                     </div>`,
     'ed-fl-btns': `<div class="btn-box">
-                    <button class="ed-btn ed-btn-white" data-cmd="justifyLeft" aria-label="tooltip" aria-content='Align left'><i class="fa fa-align-left"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="justifyCenter" aria-label="tooltip" aria-content='Align center'><i class="fa fa-align-center"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="justifyRight" aria-label="tooltip" aria-content='Align right'><i class="fa fa-align-right"></i></button>
-                    <button class="ed-btn ed-btn-white" data-cmd="justifyFull" aria-label="tooltip" aria-content='Align justify'><i class="fa fa-align-justify"></i></button>
-                    
+                    <button class="ed-btn ed-btn-white" data-cmd="justifyLeft" aria-label="tooltip" aria-content='Align left' type="button"><i class="fa fa-align-left"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="justifyCenter" aria-label="tooltip" aria-content='Align center' type="button"><i class="fa fa-align-center"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="justifyRight" aria-label="tooltip" aria-content='Align right' type="button"><i class="fa fa-align-right"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="justifyFull" aria-label="tooltip" aria-content='Align justify' type="button"><i class="fa fa-align-justify"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="Float" data-val='left' aria-label="tooltip" aria-content='Float Left' type="button"><i class="fa fa-arrow-left"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="Float" data-val='right' aria-label="tooltip" aria-content='Float Right' type="button"><i class="fa fa-arrow-right"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="Float" data-val='unset' aria-label="tooltip" aria-content='No Float' type="button"><i class="fa fa-arrows-alt-h"></i></button>
+
                     <input type='color' id='HighlightColorInput' hidden value='#ffffff'>
                     <label for='HighlightColorInput' class='ed-btn ed-btn-white' aria-label="tooltip" aria-content='Highlight'>
                     <i class="fa fa-highlighter" style="padding: 5px;" id='highlightColor'></i></label>
 
-                    <button class="ed-btn ed-btn-white" data-cmd="strikeThrough" aria-label="tooltip" aria-content='Strike through'><i class="fa fa-strikethrough"></i></button>
+                    <button class="ed-btn ed-btn-white" data-cmd="strikeThrough" aria-label="tooltip" aria-content='Strike through' type="button"><i class="fa fa-strikethrough"></i></button>
 
                     <input type='color' id='textColorInput' hidden>
                     <label for='textColorInput' class='ed-btn ed-btn-white' aria-label="tooltip" aria-content='Text Color'>
@@ -101,11 +106,19 @@ class Editor {
         if (ret) return r;
     }
 
-    applyFormat(blockName) {
+    applyFormat(blockName, style='') {
         this.saveSelection();
         let r = this.applySelection(true);
         let n = document.createElement(blockName);
+        n.style.cssText = style;
         r.surroundContents(n);
+    }
+
+    applyStyle(style, id=undefined) {
+        this.saveSelection();
+        let r = this.applySelection(true);
+        if (id != undefined) {r.startContainer.lastChild.id=id;}
+        r.startContainer.lastChild.style.cssText = style;
     }
 
     floaterBlock(sel, modifier=false, ele=undefined, val='https://') {
@@ -121,7 +134,7 @@ class Editor {
         }
 
         let s = sel.getRangeAt(0).getBoundingClientRect();
-        console.log(s);
+        console.log(sel);
         this.saveSelection();
         this.bbl.style.top = s.top+s.height+5+ 'px';
         this.bbl.style.left = (s.left-5)+'px';
@@ -169,11 +182,13 @@ class Editor {
                     self.run('insertImage', prompt('Enter image Url'));
                 }
                 else if($(this).attr('data-cmd') == 'youtube') {
-                    // https://www.youtube.com/watch?v=sLOn2AvpeBA
                     let link = prompt('Enter Youtube link');
-                    link = link.split('=')[1];
+                    link = link.split('=')[1];968602
                     let val = `<div class='ed-youtube' dragable='true'><iframe style='width:100%; height:100%;' src="https://www.youtube.com/embed/${link}" frameborder="0" allow=" encrypted-media" allowfullscreen></iframe></div>`
                     self.run('insertHtml', val);
+                }
+                else if($(this).attr('data-cmd') == 'Float') {
+                    self.applyStyle(`float:${$(this).attr('data-val')}; margin:5px;`);
                 }
                 else { 
                     self.run($(this).attr('data-cmd'));
