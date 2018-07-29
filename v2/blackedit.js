@@ -2,7 +2,7 @@
 
 var HtmlContents = {
     'ed-tools' : `<div id="ed-tools">
-                <div class="btn-box" id="level-1">
+                    <div class="btn-box" id="level-1">
                     <select name="headings" id="ed-heading" class='ed-select ed-btn-white' aria-label="tooltip" aria-content='Bold Ctrl+B'>
                         <option value="h1">Heading H1</option>
                         <option value="h2">Heading H2</option>
