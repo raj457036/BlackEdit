@@ -6,7 +6,7 @@ The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor
 
 #Blackedit v2 alpha
 
-#Blackedit v3 Version 1 Beta
+#Blackedit v3 Version 1-Beta
 
 
 
