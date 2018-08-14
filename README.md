@@ -10,7 +10,7 @@ BlackEdit V2 Alpha [a link](https://raj457036.github.io/BlackEdit/v2/)
 
 #Blackedit v2 alpha
 
-#Blackedit v3 Version 1 Beta
+#Blackedit v3 Version 1-Beta
 
 
 
