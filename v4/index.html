@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <title>BlackEdit &odot; TryIt</title>
+  </head>
+  <body>
+      <style>
+          .editor-space {
+              height:500px;
+          }
+      </style>
+    <!-- <div class="container">
+        <div id="editor"></div>
+        <div id="output"></div>
+    </div> -->
+
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand mx-auto" href="#">BlackEdit V4 Cryo <small class="text-info" title="Black editor tryit portal">tryit</small></a>
+    </nav>
+    <div class="container-fluid">
+        <div class="row bg-light p-3 h-100">
+            <div class="col-lg-6 d-flex flex-column">
+                <p class="lead text-center">Editor</p> <br>
+                <div id="editor" class="shadow w-100 rounded border d-block"></div>
+            </div>
+            <div class="col-lg-6 bg-light d-flex flex-column">
+                <p class="lead text-center">HTML</p>
+                <div id="output" class="w-100 h-100 d-block border rounded shadow p-2" style="overflow-wrap: break-word"></div>
+            </div>
+        </div>
+        <div class="bg-light p-3">
+            <p class="lead text-center">More info</p>
+            <p class="lead text-center">
+                Try More: <a href="../v3/index.html" class="text-success">BlackEdit V3 Beta</a>&nbsp;
+                <a href="../v2/index.html" class="text-danger">BlackEdit V2 alpha</a>
+            </p>
+            <p class="lead text-center">
+                    go to <a href="https://github.com/raj457036/BlackEdit/v4/" target="_blank">github <i class="fab fa-github"></i></a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="./editor-class.js"></script>
+    <script>
+        var ed = new BlackEdit('editor','output');
+        ed.init(auto_output=true);
+        
+    </script>
+</body>
+</html>

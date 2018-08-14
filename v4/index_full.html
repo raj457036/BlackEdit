@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./editor.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="be-container">
+            <div class="be" id="be">
+                <div class="be-tools">
+                    <div class="be-basic-tools">
+                        <button class="be-btn" type="button" data-edcmd="bold"><i class="fas fa-bold"></i></button>
+                        <button class="be-btn" type="button" data-edcmd="italic"><i class="fas fa-italic"></i></button>
+                        <button class="be-btn" type="button" data-edcmd="underline"><i class="fas fa-underline"></i></button>
+                        <div class="be-dropdown">
+                            <button type="button" class="be-dropdown-toggler be-btn"><i class="fas fa-font"></i></button>
+                            <div class="be-dropdown-toggle color-pallet-toggle">
+                                <div class="be-dropdown-item color-pallet active" data-edcmd="foreColor" data-param="#FF0000"  style="background-color:#FF0000"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#FF8000"  style="background-color:#FF8000"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#FFFF00"  style="background-color:#FFFF00"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#80FF00"  style="background-color:#80FF00"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#00FF00"  style="background-color:#00FF00"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#0080FF"  style="background-color:#0080FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#0000FF"  style="background-color:#0000FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#8000FF"  style="background-color:#8000FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#FF00FF"  style="background-color:#FF00FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#FF0080"  style="background-color:#FF0080"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#000000"  style="background-color:#000000"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="foreColor" data-param="#ffffff"  style="background-color:#ffffff"></div>
+                            </div>
+                        </div>
+                        <div class="be-dropdown">
+                            <button type="button" class="be-dropdown-toggler be-btn"><i class="fas fa-highlighter"></i></button>
+                            <div class="be-dropdown-toggle color-pallet-toggle">
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#FF0000"  style="background-color:#FF0000"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#FF8000"  style="background-color:#FF8000"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#FFFF00"  style="background-color:#FFFF00"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#80FF00"  style="background-color:#80FF00"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#00FF00"  style="background-color:#00FF00"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#0080FF"  style="background-color:#0080FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#0000FF"  style="background-color:#0000FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#8000FF"  style="background-color:#8000FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#FF00FF"  style="background-color:#FF00FF"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#FF0080"  style="background-color:#FF0080"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#000000"  style="background-color:#000000"></div>
+                                <div class="be-dropdown-item color-pallet" data-edcmd="backColor" data-param="#ffffff"  style="background-color:#ffffff"></div>
+                            </div>
+                        </div>
+                        <div class="be-dropdown">
+                            <button type="button" class="be-dropdown-toggler be-btn no-caret"><i class="fas fa-image"></i></button>
+                            <div class="be-dropdown-toggle">
+                                <form action="" method="post" id="be-img-form" enctype="multipart/form-data">
+                                    <label for="be-img-file">
+                                        <b>Drop image</b><br>(or click)
+                                    </label>
+                                    <input type="file" name="img" hidden id="be-img-file" accept=".gif,.jpg,.jpeg,.png">
+                                </form>
+                                <div class="url-input">
+                                    <input type="url" name="imgurl" id="be-img-url" placeholder="http:// img url">
+                                    <button class="be-btn" onclick="insertImage('be-img-url')">Insert</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="be-advance-tools">
+                        <div class="be-dropdown">
+                            <button type="button" class="be-dropdown-toggler be-btn"><i class="fas fa-paragraph"></i></button>
+                            <div class="be-dropdown-toggle">
+                                <div class="be-dropdown-item" data-edcmd="formatBlock" data-param="<p>" ><p>Normal</p></div>
+                                <div class="be-dropdown-item" data-edcmd="formatBlock" data-param="<h1>" ><h1>Heading 1</h1></div>
+                                <div class="be-dropdown-item" data-edcmd="formatBlock" data-param="<h2>" ><h2>heading 2</h2></div>
+                                <div class="be-dropdown-item" data-edcmd="formatBlock" data-param="<h3>" ><h3>Heading 3</h3></div>
+                                <div class="be-dropdown-item" data-edcmd="formatBlock" data-param="<h4>" ><h4>Heading 4</h4></div>
+                                <div class="be-dropdown-item" data-edcmd="formatBlock" data-param="<h5>" ><h5>Heading 5</h5></div>
+                            </div>
+                        </div>
+                        <div class="be-dropdown">
+                            <button type="button" class="be-dropdown-toggler be-btn"><i class="fas fa-align-left"></i></button>
+                            <div class="be-dropdown-toggle">
+                                <div class="be-dropdown-item" data-edcmd="justifyLeft"><i class="fas fa-align-left"> &nbsp;left</i></div>
+                                <div class="be-dropdown-item" data-edcmd="justifyCenter"><i class="fas fa-align-center"> &nbsp;center</i></div>
+                                <div class="be-dropdown-item" data-edcmd="justifyRight"><i class="fas fa-align-right"> &nbsp;right</i></div>
+                                <div class="be-dropdown-item" data-edcmd="justifyFull"><i class="fas fa-align-justify"> &nbsp;justify</i></div>
+                            </div>
+                        </div>
+                        <div class="be-dropdown">
+                            <button type="button" class="be-dropdown-toggler be-btn" data-toggle='editor-dropdown' data-id='editor-dropdown-toggle-3'><i class="fas fa-list-ol"></i></button>
+                            <div class="be-dropdown-toggle" id="editor-dropdown-toggle-3">
+                                <div class="be-dropdown-item" data-edcmd="insertOrderedList"><i class="fas fa-list-ol"> &nbsp;num list</i></div>
+                                <div class="be-dropdown-item" data-edcmd="insertUnorderedList"><i class="fas fa-list-ul"> &nbsp;bullet list</i></div>
+                            </div>
+                        </div>
+                        <button class="be-btn" type="button" data-edcmd="insertLink"><i class="fas fa-link"></i></button>
+                        <button class="be-btn" type="button" data-edcmd="code"><i class="fas fa-code"></i></button>
+                        <button class="be-btn" type="button" data-edcmd="undo"><i class="fas fa-undo"></i></button>
+                        <button class="be-btn" type="button" data-edcmd="redo"><i class="fas fa-redo"></i></button>
+                    </div>
+                </div>
+                <iframe id="be-space" onblur="this.focus()" class="be-space"></iframe>
+                <span id="be-count">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script src="./editor.js"></script>
+</body>
+</html>

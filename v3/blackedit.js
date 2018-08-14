@@ -556,7 +556,7 @@ class Editor extends CommandAssets {
             let fa = document.createElement('i');
             this.addFeatures(
                 {ele: fa, class: this.top_tools.icons[i]},
-                {ele: b, class:'ed_btn_'+this.id, attrs: {'data-cmd':this.top_tools.cmds[i], 'data-vt':this.top_tools.values[i],'data-key':this.top_tools.keys[i]}},
+                {ele: b, class:'ed_btn_'+this.id, attrs: {'data-cmd':this.top_tools.cmds[i], 'data-vt':this.top_tools.values[i],'data-key':this.top_tools.keys[i], "type":'button'}},
             )
             b.appendChild(fa);
         }
@@ -571,7 +571,7 @@ class Editor extends CommandAssets {
                 let fa = document.createElement('i');
                 this.addFeatures(
                     {ele: fa, class: this.foot_tools.icons[i]},
-                    {ele: b, class:'ed_btn_'+this.id, attrs: {'data-cmd':this.foot_tools.cmds[i], 'data-vt':this.foot_tools.values[i],'data-key':this.foot_tools.keys[i]}},
+                    {ele: b, class:'ed_btn_'+this.id, attrs: {'data-cmd':this.foot_tools.cmds[i], 'data-vt':this.foot_tools.values[i],'data-key':this.foot_tools.keys[i], "type":'button'}},
                 )
                 b.appendChild(fa);
             }
@@ -834,6 +834,7 @@ class Editor extends CommandAssets {
             }
         });
         if(!this.settings.performance_mode) {document.addEventListener("selectionchange", ()=>{this.saveRange()});}
+        
         on('click', '.ed_btn_'+this.id, (ev)=>{
             if (this.settings.performance_mode || window.innerWidth <= this.settings.device_min_width) {
                 if (ev.target.dataset.vt == 'true') {
@@ -847,7 +848,8 @@ class Editor extends CommandAssets {
                             this.Run(ev.target.dataset.cmd, this.current_sets.font_highlight);
                             break;
                         case 'insertImage':
-                            this.Run(ev.target.dataset.cmd, prompt('Enter the image link here'));
+                            this.setFloater('Insert Image', 'image');
+                            $_('#ed_floatbox').style.cssText='display:inline-block';
                             break;
                         case 'createLink':
                             this.Run(ev.target.dataset.cmd, prompt('Enter the url here'));
@@ -925,13 +927,12 @@ class Editor extends CommandAssets {
             }
             console.log(ev.target)
         });
-        on('keydown','#ed_space_'+this.id,function(ev){
+        on('keydown keyup','#ed_space_'+this.id,function(ev){
             var keysave = undefined;
             this.dataset.placeholder = '';
             self.saveRange();
             if (ev.key=='Enter') { 
-                // self.current_sets.font_style = 'paragraph';
-                setTimeout(function(){enter_nos=0;}, 1000)
+                setTimeout(function(){enter_nos=0;}, 1000);
                 enter_nos += 1;
                 if(enter_nos==3) {
                     ev.target.innerHTML+='<div></div>';
@@ -1071,7 +1072,7 @@ class Editor extends CommandAssets {
     };
 
     init() {
-        $_('head')[0].innerHTML+=ed_style;
+        // $_('head')[0].innerHTML+=ed_style;
         this.Run('styleWithCSS');
         this.Run('insertBrOnReturn');
         this.setStructure();

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     
-    
+    <link rel="stylesheet" href="./style2.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <title>BlackEdit &odot; TryIt</title>
 </head>
@@ -24,23 +24,27 @@
 
 
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand mx-auto" href="#">BlackEdit V1 Beta <small class="text-info" title="Black editor tryit portal">tryit</small></a>
+        <a class="navbar-brand mx-auto" href="#">BlackEdit V3 Beta <small class="text-info" title="Black editor tryit portal">tryit</small></a>
     </nav>
-    <div class="container-fluid d-none d-md-block">
-        <div class="row bg-light p-3 d-none d-md-flex h-100">
+    <div class="container-fluid">
+        <div class="row bg-light p-3 h-100">
             <div class="col-lg-6 d-flex flex-column">
                 <p class="lead text-center">Editor</p> <br>
                 <div id="editor" class="shadow w-100 rounded border d-block ed-editor"></div>
             </div>
             <div class="col-lg-6 bg-light d-flex flex-column">
                 <p class="lead text-center">HTML</p>
-                <div id="ed-output" class="w-100 h-100 d-block border rounded shadow p-2"></div>
+                <div id="ed-output" class="w-100 h-100 d-block border rounded shadow p-2" style="overflow-wrap: break-word"></div>
             </div>
         </div>
         <div class="bg-light p-3">
             <p class="lead text-center">More info</p>
             <p class="lead text-center">
-                    go to <a href="https://github.com/raj457036/BlackEdit" target="_blank">github <i class="fab fa-github"></i></a>
+                Try More: <a href="../v4/index.html" class="text-primary">BlackEdit V4 Cryo</a>&nbsp;
+                <a href="../v2/index.html" class="text-danger">BlackEdit V2 alpha</a>
+            </p>
+            <p class="lead text-center">
+                    go to <a href="https://github.com/raj457036/BlackEdit/v3/" target="_blank">github <i class="fab fa-github"></i></a>
             </p>
         </div>
     </div>
@@ -52,12 +56,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
         
-    <script src="./blackedit.min.js"></script>
+    <!-- <script src="./blackedit.min.js"></script> -->
+    <script src="./blackedit.js"></script>
     <script>
         var settings = {
             'smaller_device':false,
             'performance_mode':false, //higher the performance less the functionality
-            'device_min_width': 600,
+            'device_min_width': 0,
         };
         var ed = new Editor('editor','ed-output');
         ed.settings = settings;
