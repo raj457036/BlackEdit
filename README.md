@@ -8,9 +8,7 @@ The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor
 2. [BlackEdit V3 Beta](https://raj457036.github.io/BlackEdit/v3/)
 3. [BlackEdit V2 Alpha](https://raj457036.github.io/BlackEdit/v2/)
 
-#Blackedit v2 alpha
-
-#Blackedit v3 Version 1-Beta
+The document is under construction...
 
 
 
