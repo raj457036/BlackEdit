@@ -2,7 +2,7 @@
 ## BlackEdit Editor: A Free and Powerful-WYSWYG-Editor
 
 The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor with all the modern features builtIn.
-<img src="./logo.png" alt="BlackEdit" height="180" style='display:flex;justify-item:center;'/>
+<img src="./logo.png" alt="BlackEdit" height="180" align='center'/>
 #Try 
 1. [BlackEdit v4 Cryo](https://raj457036.github.io/BlackEdit/v4/)
 2. [BlackEdit V3 Beta](https://raj457036.github.io/BlackEdit/v3/)
