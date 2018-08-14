@@ -14,7 +14,7 @@
 9. Fully customizable and free
 
 
-**Documentation is in not complete yet.**
+**Documentation is complete yet.**
 
 The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor with all the modern features builtIn.
 
