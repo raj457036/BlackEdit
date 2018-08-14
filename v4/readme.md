@@ -22,7 +22,7 @@ The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor
 # Files
 steps to use editor:
 1. add link to fontawasome 5 
-2. add editor-class.js file to your page where you want to use editor
+2. add [editor-class.js](https://github.com/raj457036/BlackEdit/blob/master/v4/editor-class.js) file to your page where you want to use editor
 3. create an instance of editor 
     ```javascript
     var editor_id = 'ed_id'; // replace the 'ed_id' with the id of the element where you want to put the editor
