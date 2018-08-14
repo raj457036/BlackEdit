@@ -4,7 +4,7 @@
 The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor with all the modern features builtIn.
 
 #Try 
-BlackEdit v4 Cryo  [a link](https://raj457036.github.io/BlackEdit/v4/)
+[BlackEdit v4 Cryo](https://raj457036.github.io/BlackEdit/v4/)
 BlackEdit V3 Beta  [a link](https://raj457036.github.io/BlackEdit/v3/)
 BlackEdit V2 Alpha [a link](https://raj457036.github.io/BlackEdit/v2/)
 
