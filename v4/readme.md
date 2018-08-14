@@ -19,7 +19,7 @@
 The **BlackEdit** is an open source, free to use and powerful **WYSIWYG** editor with all the modern features builtIn.
 
 
-# Files
+# How To Use
 steps to use editor:
 1. add link to fontawasome 5 
 2. add [editor-class.js](https://github.com/raj457036/BlackEdit/blob/master/v4/editor-class.js) file to your page where you want to use editor
@@ -34,7 +34,8 @@ steps to use editor:
 4. Editor is ready to use. enjoy!
 **BlackEdit** uses **fontAwasome 5** for its icon utilities and **Vanilla js** and **ES6** for all its functionality
 
-#Doc will be updated soon
+# How to Modify editor functionality
+## Doc will be updated soon... stay tuned
 
 You can use this editor anywhere you want without any restriction. just if you want then give me a small credit.
 thank you any suggestion is welcome.
