@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="logo.png" type="image/x-icon">
+
 # Welcome to BlackEdit!
 ## BlackEdit Editor: A Free and Powerful-WYSWYG-Editor
 
