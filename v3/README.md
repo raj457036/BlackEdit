@@ -1,4 +1,4 @@
-# Welcome to BlackEdit! V3 Beta 
+# Welcome to BlackEdit! V3 Beta [Try it](https://raj457036.github.io/BlackEdit/v3/)
 ## BlackEdit Editor: A Free and Powerful-WYSWYG-Editor without any special library 
 ## Vanilla js used 
 
