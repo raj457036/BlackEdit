@@ -183,7 +183,7 @@ class BlackEdit {
             });
             
             _(`#${this.output_id}`)[0].addEventListener('keyup', ()=>{
-                this.getFrame().body.innerHTML = _(`#${this.output_id}`)[0].innerText = ;
+                this.getFrame().body.innerHTML = _(`#${this.output_id}`)[0].innerText;
             });
         }
         return this.getFrame().body.innerHTML;
