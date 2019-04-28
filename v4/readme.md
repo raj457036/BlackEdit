@@ -28,7 +28,7 @@ steps to use editor:
     var editor_id = 'ed_id'; // replace the 'ed_id' with the id of the element where you want to put the editor
     var output_id = 'out_id'; // replace the 'out_id' with the id of the element where you want to put the output html
     
-    var ed = new Editor(editor_id,output_id); // create instance of editor with provided editor_id and output_id(optional)
+    var ed = new BlackEdit(editor_id,output_id); // create instance of editor with provided editor_id and output_id(optional)
     ed.init(auto_output=true); // passing the auto_output is for contineous update of output in every keystroke.
     ```
 4. Editor is ready to use. enjoy!
