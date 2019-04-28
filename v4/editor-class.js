@@ -180,13 +180,18 @@ class BlackEdit {
         if (auto) {
             this.getFrame().addEventListener('keyup', ()=>{
                 _(`#${this.output_id}`)[0].innerText = this.getFrame().body.innerHTML;
-            })
+            });
+            
+            _(`#${this.output_id}`)[0].addEventListener('keyup', ()=>{
+                this.getFrame().body.innerHTML = _(`#${this.output_id}`)[0].innerText = ;
+            });
         }
         return this.getFrame().body.innerHTML;
     }
 
     init(auto_output=false) {
         this.setStructure();
+        _(`#${this.output_id}`)[0].contentEditable = true;
         
         setTimeout(()=>{
             this.setEvents();
